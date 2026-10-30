@@ -39,7 +39,7 @@
             font-size: 13px;
             letter-spacing: 3px;
             margin-bottom: 12px;
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
 
         h1 {
@@ -47,7 +47,7 @@
             color: #9655f0;
             font-size: 29px;
             margin-bottom: 10px;
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             text-shadow: black 1px 1px;
         }
 
@@ -57,7 +57,7 @@
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 28px;
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         label {
@@ -91,6 +91,10 @@
             font-size: 12px;
         }
 
+        .remember label {
+            margin-bottom: 0;
+        }
+
         .login-button {
             width: 100%;
             padding: 13px;
@@ -101,10 +105,22 @@
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .login-button:hover {
             background: #bd21d8;
+        }
+
+        .login-button:active {
+            transform: scale(0.97);
+        }
+
+        #errorMessage {
+            color: #d0004f;
+            font-size: 13px;
+            margin-bottom: 12px;
+            text-align: center;
         }
 
         .footer {
@@ -120,7 +136,7 @@
             font-weight: bold;
         }
 
-       .page-footer {
+        .page-footer {
             position: fixed;
             bottom: 15px;
             left: 0;
@@ -150,8 +166,16 @@
             h1 {
                 font-size: 25px;
             }
-        }
 
+            .page-footer {
+                position: static;
+                margin-top: 25px;
+            }
+
+            body {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
@@ -168,13 +192,12 @@
             and good values.
         </p>
 
-       <form action="page2.html" method="get">
+        <form id="loginForm">
 
             <label for="username">Username</label>
             <input
                 type="text"
                 id="username"
-                name="username"
                 placeholder="Enter your username"
                 required
             >
@@ -182,8 +205,7 @@
             <label for="password">Password</label>
             <input
                 type="password"
-                id="pardillo"
-                name="bea"
+                id="password"
                 placeholder="Enter your password"
                 required
             >
@@ -194,6 +216,8 @@
                     I choose to be kind and honest online.
                 </label>
             </div>
+
+            <p id="errorMessage" aria-live="polite"></p>
 
             <button type="submit" class="login-button">
                 LOG IN
@@ -208,12 +232,28 @@
 
     </div>
 
-<footer class="page-footer">
-    <hr>
-    <p>All Rights Reserved © 2026</p> <br>
-    <p>CIC 111</p>
-</footer>
+    <footer class="page-footer">
+        <hr>
+        <p>All Rights Reserved © 2026</p>
+        <p>CIC 111</p>
+    </footer>
 
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (username === "bea" && password === "12345") {
+                window.location.href = "page2.html";
+            } else {
+                errorMessage.textContent =
+                    "Wrong username or password. Please try again!";
+            }
+        });
+    </script>
 
 </body>
 </html>
