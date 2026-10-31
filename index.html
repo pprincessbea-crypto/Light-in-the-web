@@ -17,20 +17,24 @@
         body {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #d194f5;
-            box-shadow: #f73a7f 0 3px 3px;
-            padding: 20px;
+            background-image: url("tcgc%20logo.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
         }
 
         .login-container {
             width: 100%;
             max-width: 400px;
-            background: #f3c1de;
+            background: rgba(157, 243, 141, 0.65);
             padding: 35px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
         }
 
         .logo {
@@ -44,20 +48,22 @@
 
         h1 {
             text-align: center;
-            color: #9655f0;
+            color: #ffffff;
             font-size: 29px;
             margin-bottom: 10px;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            text-shadow: black 1px 1px;
+            text-shadow: black 2px 2px;
+            letter-spacing: 2px;
         }
 
         .subtitle {
             text-align: center;
-            color: #4f4b4b;
+            color: #ffffff;
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 28px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-shadow: #170505 1px 1px;
         }
 
         label {
@@ -98,7 +104,7 @@
         .login-button {
             width: 100%;
             padding: 13px;
-            background: #e99adb;
+            background: #c4f3c6;
             color: rgb(27, 27, 28);
             border: none;
             border-radius: 7px;
@@ -109,7 +115,7 @@
         }
 
         .login-button:hover {
-            background: #bd21d8;
+            background: #027435;
         }
 
         .login-button:active {
@@ -126,7 +132,7 @@
         .footer {
             text-align: center;
             margin-top: 25px;
-            color: #7621ed;
+            color: #0a060f;
             text-shadow: #fbf8f8 1px 1px;
             font-size: 12px;
             line-height: 1.8;
@@ -142,7 +148,7 @@
             left: 0;
             width: 100%;
             text-align: center;
-            color: #777777;
+            color: #080101;
             font-size: 12px;
             padding: 0 20px;
         }
@@ -151,7 +157,7 @@
             max-width: 400px;
             margin: 0 auto 12px;
             border: none;
-            border-top: 1px solid #d8d2c5;
+            border-top: 1px solid #130d00;
         }
 
         .page-footer p {
@@ -179,7 +185,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-image: url(tcgc.png);">   
 
     <div class="login-container">
 
